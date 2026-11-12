@@ -155,3 +155,7 @@ def test_actionsinplaywright(setup):
 #
 #                 context.close()
 #                 browser.close()
+
+
+def test_newcase():
+        pass
