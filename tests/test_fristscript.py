@@ -159,3 +159,6 @@ def test_actionsinplaywright(setup):
 
 def test_newcase():
         pass
+
+def test_secondnewcase():
+        pass
