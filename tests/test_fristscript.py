@@ -3,9 +3,11 @@ from idlelib import browser
 from tkinter import dialog
 from unittest.result import failfast
 
+import dotenv
 import pytest
 from playwright.sync_api import sync_playwright, Page, expect  # fixture
 
+from sauseproject.utils import read_test_data
 
 
 @pytest.fixture
@@ -26,14 +28,18 @@ def setup():
                 yield page,context
                 browser.close()
 
+
+test_data = read_test_data("testdata.csv")
+
 @pytest.mark.smoke
 @pytest.mark.login
-@pytest.mark.parametrize("username,password",[("standard_user","secret_sauce",),("locked_out_user","secret_sauce")])
-def test_login_test(setup,username,password):
+@pytest.mark.parametrize("row", test_data)
+# @pytest.mark.parametrize("username,password",[("standard_user","secret_sauce",),("locked_out_user","secret_sauce")])
+def test_login_test(setup,row):
         page = setup
         # page.pause()
         page.goto("https://www.saucedemo.com/")
-        print("get the cred", username,password)
+        print("get the cred", row["username"],ropassword)
         print("get the title of applcaiotion ",page.title())
         page.locator("[name='user-name']").fill(username)
         page.get_by_placeholder("Password").fill(password)

@@ -8,7 +8,6 @@ class Dahboard_page:
     def assert_title(self, msg):
         assert self.page.title() == msg, "not able to login"
 
-
     def logout(self):
         self.page.get_by_text("Open Menu").click()
         self.page.get_by_text("Logout").click()

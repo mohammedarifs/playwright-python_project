@@ -1,0 +1,5 @@
+test case,username,password,product,adress
+1,standard_user,secret_sauce
+2,visual_user,secret_sauce
+3,visual_user,secret_sauce,a
+4,visual_user,secret_sauce,,bangalore

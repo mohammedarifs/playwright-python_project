@@ -13,7 +13,7 @@ loggerformatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
 
 @pytest.fixture
-def setup():
+def setup1():
     print("precondition")
     yield
     print("postcondition")
